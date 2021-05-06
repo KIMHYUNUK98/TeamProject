@@ -1,3 +1,6 @@
+#include <stdio.h>
+#include <string.h>
+
 typedef struct{
     char name[20]; //학생이름
     int studentID; //학번
@@ -7,13 +10,8 @@ typedef struct{
     int offline; //금요일 오프라인 창여 여부 불참: 0 참석: 1
 } Student;
 
-int selectMenu();
-int loadFile(Student *s); //파일 불러오기
-void saveData(Student *s, int index); //파일 저장하기
 int createStudent(Student *s); //C
 void readStudent(Student *s); //R
 void updateStudent(Student *s); //U
 void deleteStudent(Student *s); //D
-void giveGrade(Student *s);
-void searchName(Student *s);
-void searchID(Student *s);
+
