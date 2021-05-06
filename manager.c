@@ -49,6 +49,7 @@ int selectMenu() {
 	printf("1. 조회\n");
 	printf("1. 조회\n");
 	printf("1. 조회\n");
+
 }
 
 int loadFile(Student *s) {
