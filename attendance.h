@@ -14,5 +14,5 @@ typedef struct{
 int createStudent(Student *s); //C
 void readStudent(Student *s); //R
 void updateStudent(Student *s); //U
-void deleteStudent(Student *s); //D
+int deleteStudent(Student *s); //D
 
