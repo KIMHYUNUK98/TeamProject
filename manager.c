@@ -14,7 +14,7 @@ void listStudent(Student *s, int index) {
 char selectStudent(Student *s, int index) {
 	char name[20];
     listStudent(s, index);
-    printf("이름은 (취소:0)?");
+    printf("이름은?");
     scanf("%s", name);
     getchar();
     return *name;
@@ -23,7 +23,7 @@ char selectStudent(Student *s, int index) {
 int selectStudentID(Student *s, int index) {
 	int no;
     listStudent(s, index);
-    printf("번호는 (취소:0)?");
+    printf("학번은?");
     scanf("%d",&no);
     getchar();
     return no;
@@ -32,7 +32,7 @@ int selectStudentID(Student *s, int index) {
 int selectDataNumber(Student *s, int index) {
 	int no;
     listStudent(s, index);
-    printf("번호는 (취소:0)?");
+    printf("번호는?");
     scanf("%d",&no);
     getchar();
     return no;
@@ -48,7 +48,12 @@ int selectMenu() {
 	printf("5. 저장\n");
 	printf("1. 조회\n");
 	printf("1. 조회\n");
-	printf("1. 조회\n");
+	printf("0. 종료\n");
+
+	printf("=> 원하는 메뉴는? ");
+    scanf("%d", &menu);
+
+    return menu;
 }
 
 int loadFile(Student *s) {
