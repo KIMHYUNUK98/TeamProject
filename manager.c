@@ -1,8 +1,8 @@
 #include "attendance.h"
 
 void listStudent(Student *s, int index) {
-	printf("\n이름\t학번\t소속학부\t화요일 출석\t금요일 출석\t오프라인 출석 여부\n");
-    printf("=======================================================\n");
+	printf("\n\t이름\t학번\t\t소속학부   화요일 출석  금요일 출석  오프라인 출석 여부\n");
+    printf("===================================================================================\n");
     for(int i = 0; i < index; i++){
         if( s[i].studentID == -1) continue;
 		printf("%d\t", i+1);
