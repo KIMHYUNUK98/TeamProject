@@ -1,11 +1,12 @@
 #include <stdio.h>
 #include <string.h>
-#include "attendance.h"
+#include "manager.h"
 
 int main() {
 
 	Student slist[100];
 	int curcount = 0;
+	int index = 0;
 	int count = 0, menu;
 
 	while(1) {
@@ -32,14 +33,25 @@ int main() {
 			updateStudent(&slist[no-1]);
 		}
 		else if(menu == 4) {
-			int delok;
-			printf("어떤 정보를 입력하시겠습니까?(1:번호 2:이름 3: 학번): ");
+			int delok, no;
+			printf("어떤 정보를 입력하시겠습니까?(1:번호 2:이름 3:학번): ");
 			scanf("%d", &delok);
-			if(delok == 1) {
+			if(delok == 0) {
+				no = selectDataNumber(slist, index);
 				if(deleteStudent(&slist[no-1])) count--;
 				printf("==> 삭제됨!!!\n");
 			}
-			int no = selectStudent(slist, index);
+			else if(delok == 1) {
+				no = selectStudent(slist, index);
+				if(deleteStudent(&slist[no-1])) count--;
+				printf("==> 삭제됨!!!\n");
+			}
+			else {
+				no = selectStudentID(slist, index);
+				if(deleteStudent(&slist[no-1])) count--;
+				printf("==> 삭제됨!!!\n");
+			}
+			
 			if(no == 0) {
 				printf("취소됨!!!\n");
 				continue;
