@@ -2,17 +2,21 @@
 #include <string.h>
 
 typedef struct{
-    char name[20]; //í•™ìƒì´ë¦„
-    int studentID; //í•™ë²ˆ
-    char department[20]; //ì†Œì†í•™ë¶€
-    int tuesday; //í™”ìš”ì¼ ì¶œì„ ì—¬ë¶€ 0: ê²°ì„ 1: ì¶œì„
-    int friday; //ê¸ˆìš”ì¼ ì¶œì„ ì—¬ë¶€ 0: ê²°ì„ 1: ì¶œì„
-    int offline; //ê¸ˆìš”ì¼ ì˜¤í”„ë¼ì¸ ì°½ì—¬ ì—¬ë¶€ ë¶ˆì°¸: 0 ì°¸ì„: 1
-    char grade; //ì„±ì 
+    char name[20]; //ÇĞ»ıÀÌ¸§
+    int studentID; //ÇĞ¹ø
+    char department[20]; //¼Ò¼ÓÇĞºÎ
+    int tuesday; //È­¿äÀÏ Ãâ¼® ¿©ºÎ 0: °á¼® 1: Ãâ¼®
+    int friday; //±İ¿äÀÏ Ãâ¼® ¿©ºÎ 0: °á¼® 1: Ãâ¼®
+    int offline; //±İ¿äÀÏ ¿ÀÇÁ¶óÀÎ Ã¢¿© ¿©ºÎ ºÒÂü: 0 Âü¼®: 1
+    char grade; //¼ºÀû
 } Student;
 
 int createStudent(Student *s); //C
 void readStudent(Student *s); //R
 void updateStudent(Student *s); //U
+<<<<<<< HEAD
 int deleteStudent(Student *s); //D
 
+=======
+int deleteStudent(Student *s); //D
+>>>>>>> 32fc8d7eabc1c233f5a396e13dec26c464acace3

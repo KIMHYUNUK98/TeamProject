@@ -1,7 +1,7 @@
 #include "attendance.h"
 
 void listStudent(Student *s, int index) {
-	printf("\nì´ë¦„\tí•™ë²ˆ\tì†Œì†í•™ë¶€\tí™”ìš”ì¼ ì¶œì„\tê¸ˆìš”ì¼ ì¶œì„\tì˜¤í”„ë¼ì¸ ì¶œì„ ì—¬ë¶€\n");
+	printf("\nÀÌ¸§\tÇĞ¹ø\t¼Ò¼ÓÇĞºÎ\tÈ­¿äÀÏ Ãâ¼®\t±İ¿äÀÏ Ãâ¼®\t¿ÀÇÁ¶óÀÎ Ãâ¼® ¿©ºÎ\n");
     printf("=======================================================\n");
     for(int i = 0; i < index; i++){
         if( s[i].studentID == -1) continue;
@@ -14,7 +14,7 @@ void listStudent(Student *s, int index) {
 char selectStudent(Student *s, int index) {
 	char name[20];
     listStudent(s, index);
-    printf("ì´ë¦„ì€?");
+    printf("ÀÌ¸§Àº (Ãë¼Ò:0)?");
     scanf("%s", name);
     getchar();
     return *name;
@@ -23,7 +23,7 @@ char selectStudent(Student *s, int index) {
 int selectStudentID(Student *s, int index) {
 	int no;
     listStudent(s, index);
-    printf("í•™ë²ˆì€?");
+    printf("¹øÈ£´Â (Ãë¼Ò:0)?");
     scanf("%d",&no);
     getchar();
     return no;
@@ -32,7 +32,7 @@ int selectStudentID(Student *s, int index) {
 int selectDataNumber(Student *s, int index) {
 	int no;
     listStudent(s, index);
-    printf("ë²ˆí˜¸ëŠ”?");
+    printf("¹øÈ£´Â (Ãë¼Ò:0)?");
     scanf("%d",&no);
     getchar();
     return no;
@@ -40,17 +40,14 @@ int selectDataNumber(Student *s, int index) {
 
 int selectMenu() {
 	int menu;
-	printf("\n******ì¶œì„ë¶€ ëª…ë‹¨ ê´€ë¦¬******\n");
-	printf("1. ì¡°íšŒ\n");
-	printf("2. ì¶”ê°€\n");
-	printf("3. ìˆ˜ì •\n");
-	printf("4. ì‚­ì œ\n");
-	printf("5. ì €ì¥\n");
-	printf("1. ì¡°íšŒ\n");
-	printf("1. ì¡°íšŒ\n");
-	printf("0. ì¢…ë£Œ\n");
-
-	printf("=> ì›í•˜ëŠ” ë©”ë‰´ëŠ”? ");
+	printf("\n******Ãâ¼®ºÎ ¸í´Ü °ü¸®******\n");
+	printf("1. Á¶È¸\n");
+	printf("2. Ãß°¡\n");
+	printf("3. ¼öÁ¤\n");
+	printf("4. »èÁ¦\n");
+	printf("5. ÀúÀå\n");
+	printf("0. Á¾·á\n");
+    printf("=? ¿øÇÏ´Â ¸Ş´º´Â?: ");
     scanf("%d", &menu);
 
     return menu;
