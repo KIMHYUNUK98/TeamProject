@@ -5,6 +5,7 @@ void listStudent(Student *s, int index) {
     printf("=======================================================\n");
     for(int i = 0; i < index; i++){
         if( s[i].studentID == -1) continue;
+		printf("%d\t", i+1);
         readStudent(&s[i]);
     }
     printf("\n");
@@ -20,6 +21,15 @@ char selectStudent(Student *s, int index) {
 }
 
 int selectStudentID(Student *s, int index) {
+	int no;
+    listStudent(s, index);
+    printf("번호는 (취소:0)?");
+    scanf("%d",&no);
+    getchar();
+    return no;
+}
+
+int selectDataNumber(Student *s, int index) {
 	int no;
     listStudent(s, index);
     printf("번호는 (취소:0)?");
@@ -50,7 +60,7 @@ void saveData(Student *s, int index) {
 }
 
 void giveGrade(Student *s) {
-	
+
 }
 
 void searchName(Student *s) {
