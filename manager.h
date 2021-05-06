@@ -1,4 +1,3 @@
-//다중데이터 처리 관련 함수
 #include "attendance.h"
 
 void listStudent(Student *s, int index);
