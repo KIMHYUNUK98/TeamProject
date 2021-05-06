@@ -46,10 +46,11 @@ int selectMenu() {
 	printf("3. 수정\n");
 	printf("4. 삭제\n");
 	printf("5. 저장\n");
-	printf("1. 조회\n");
-	printf("1. 조회\n");
-	printf("1. 조회\n");
+	printf("0. 종료\n");
+    printf("=? 원하는 메뉴는?: ");
+    scanf("%d", &menu);
 
+    return menu;
 }
 
 int loadFile(Student *s) {
