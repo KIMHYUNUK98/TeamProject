@@ -1,11 +1,31 @@
 #include "attendance.h"
 
 void listStudent(Student *s, int index) {
-
+	printf("\n이름\t학번\t소속학부\t화요일 출석\t금요일 출석\t오프라인 출석 여부\n");
+    printf("=======================================================\n");
+    for(int i = 0; i < index; i++){
+        if( s[i].studentID == -1) continue;
+        readStudent(&s[i]);
+    }
+    printf("\n");
 }
 
-int selectStudent(Student *s, int index) {
+char selectStudent(Student *s, int index) {
+	char name[20];
+    listStudent(s, index);
+    printf("이름은 (취소:0)?");
+    scanf("%s", name);
+    getchar();
+    return *name;
+}
 
+int selectStudentID(Student *s, int index) {
+	int no;
+    listStudent(s, index);
+    printf("번호는 (취소:0)?");
+    scanf("%d",&no);
+    getchar();
+    return no;
 }
 
 int selectMenu() {
@@ -30,7 +50,7 @@ void saveData(Student *s, int index) {
 }
 
 void giveGrade(Student *s) {
-
+	
 }
 
 void searchName(Student *s) {
