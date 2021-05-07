@@ -12,7 +12,7 @@ int main() {
 	while(1) {
 		menu = selectMenu();
 		if(menu == 0) {
-			printf("Á¾·áµÊ!!\n");
+			printf("ì¢…ë£Œë¨!!\n");
 			break;
 		}
 		if(menu == 1 || menu == 3 || menu == 4)
@@ -22,43 +22,40 @@ int main() {
 		}
 		else if(menu == 2) {
 			count += createStudent(&slist[index++]);
-			printf("==> Ãß°¡µÊ!!!\n");
+			printf("==> ì¶”ê°€ë¨!!!\n");
 		}
 		else if(menu == 3) {
 			int no = selectStudent(slist, index);
 			if(no == 0) {
-				printf("Ãë¼ÒµÊ!!!\n");
+				printf("ì·¨ì†Œë¨!!!\n");
 				continue;
 			}
 			updateStudent(&slist[no-1]);
 		}
 		else if(menu == 4) {
 			int delok, no;
-			printf("¾î¶² Á¤º¸¸¦ »èÁ¦ÇÏ½Ã°Ú½À´Ï±î?(0: »èÁ¦Ãë¼Ò 1:¹øÈ£ 2:ÀÌ¸§ 3:ÇĞ¹ø): ");
+			printf("ì–´ë–¤ ì •ë³´ë¥¼ ì‚­ì œí•˜ì‹œê² ìŠµë‹ˆê¹Œ?(0: ì‚­ì œì·¨ì†Œ 1:ë²ˆí˜¸ 2:ì´ë¦„ 3:í•™ë²ˆ): ");
 			scanf("%d", &delok);
 			if(delok == 0) {
-				printf("Ãë¼ÒµÊ!!!\n");
+				printf("ì·¨ì†Œë¨!!!\n");
 				continue;
 			}
 			else if(delok == 1) {
 				no = selectDataNumber(slist, index);
 				if(deleteStudent(&slist[no-1])) count--;
-				printf("==> »èÁ¦µÊ!!!\n");
+				printf("==> ì‚­ì œë¨!!!\n");
 			}
 			else if(delok == 2) {
 				no = selectStudent(slist, index);
 				if(deleteStudent(&slist[no-1])) count--;
-				printf("==> »èÁ¦µÊ!!!\n");
+				printf("==> ì‚­ì œë¨!!!\n");
 			}
 			else {
 				no = selectStudentID(slist, index);
 				if(deleteStudent(&slist[no-1])) count--;
-				printf("==> »èÁ¦µÊ!!!\n");
+				printf("==> ì‚­ì œë¨!!!\n");
 			}
 		}
 	}
 	return 0;
 }
-			
-			
-
