@@ -2,13 +2,13 @@
 #include <string.h>
 
 typedef struct{
-    char name[20]; //ï¿½Ð»ï¿½ï¿½Ì¸ï¿½
-    int studentID; //ï¿½Ð¹ï¿½
-    char department[20]; //ï¿½Ò¼ï¿½ï¿½Ðºï¿½
-    int tuesday; //È­ï¿½ï¿½ï¿½ï¿½ ï¿½â¼® ï¿½ï¿½ï¿½ï¿½ 0: ï¿½á¼® 1: ï¿½â¼®
-    int friday; //ï¿½Ý¿ï¿½ï¿½ï¿½ ï¿½â¼® ï¿½ï¿½ï¿½ï¿½ 0: ï¿½á¼® 1: ï¿½â¼®
-    int offline; //ï¿½Ý¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ã¢ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½: 0 ï¿½ï¿½ï¿½ï¿½: 1
-    char grade; //ï¿½ï¿½ï¿½ï¿½
+    char name[20]; //ÇÐ»ýÀÌ¸§
+    int studentID; //ÇÐ¹ø
+    char department[20]; //¼Ò¼ÓÇÐºÎ
+    int tuesday; //È­¿äÀÏ Ãâ¼® ¿©ºÎ 0: °á¼® 1: Ãâ¼®
+    int friday; //±Ý¿äÀÏ Ãâ¼® ¿©ºÎ 0: °á¼® 1: Ãâ¼®
+    int offline; //±Ý¿äÀÏ ¿ÀÇÁ¶óÀÎ Ã¢¿© ¿©ºÎ ºÒÂü: 0 Âü¼®: 1
+    char grade; //¼ºÀû
 } Student;
 
 int createStudent(Student *s); //C

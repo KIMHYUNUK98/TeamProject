@@ -5,8 +5,8 @@ char selectStudent(Student *s, int index);
 int selectStudentID(Student *s, int index);
 int selectDataNumber(Student *s, int index);
 int selectMenu();
-int loadFile(Student *s); //íŒŒì¼ ë¶ˆëŸ¬ì˜¤ê¸°
-void saveData(Student *s, int index); //íŒŒì¼ ì €ì¥í•˜ê¸°
+int loadFile(Student *s); //ÆÄÀÏ ºÒ·¯¿À±â
+void saveData(Student *s, int index); //ÆÄÀÏ ÀúÀåÇÏ±â
 void giveGrade(Student *s);
 void searchName(Student *s);
 void searchID(Student *s);
