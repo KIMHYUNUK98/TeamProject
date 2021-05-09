@@ -7,26 +7,44 @@ void listStudent(Student *s, int index) {
         if( s[i].studentID == -1) continue;
 		printf("%d\t", i+1);
         readStudent(&s[i]);
+        printf("\n");
     }
-    printf("\n");
 }
 
-char selectStudent(Student *s, int index) {
+int selectStudent(Student *s, int index) {
 	char name[20];
+    int i = 0;
     listStudent(s, index);
+<<<<<<< HEAD
     printf("ì´ë¦„ì€ (ì·¨ì†Œ:0)?");
+=======
+    printf("ÀÌ¸§Àº? ");
+>>>>>>> 30ee5d9a3c0ce614f14bc6cbdb4a9ebff7066774
     scanf("%s", name);
     getchar();
-    return *name;
+    for(i = 0 ; i < index ; i++) {
+        if(strcmp(name,s[i].name) == 0)
+            return i;
+    }
+    return -1;
 }
 
 int selectStudentID(Student *s, int index) {
 	int no;
+    int i = 0;
     listStudent(s, index);
+<<<<<<< HEAD
     printf("ë²ˆí˜¸ëŠ” (ì·¨ì†Œ:0)?");
+=======
+    printf("ÇÐ¹øÀº? ");
+>>>>>>> 30ee5d9a3c0ce614f14bc6cbdb4a9ebff7066774
     scanf("%d",&no);
     getchar();
-    return no;
+    for(i = 0 ; i < index ; i++) {
+        if(s[i].studentID == no)
+            return i;
+    }
+    return -1;
 }
 
 int selectDataNumber(Student *s, int index) {

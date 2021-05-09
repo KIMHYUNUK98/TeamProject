@@ -23,7 +23,7 @@ int createStudent(Student *s) {
 }
 
 void readStudent(Student *s) {
-	printf("%s\t %d\t %s \t\t%d\t%d\t\t%d", s->name, s->studentID, s->department, s->tuesday, s->friday, s->offline);
+	printf("%s\t %d\t %s   %d\t\t%d\t\t%d", s->name, s->studentID, s->department, s->tuesday, s->friday, s->offline);
 }
 
 void updateStudent(Student *s) {	
