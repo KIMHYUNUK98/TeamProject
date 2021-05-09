@@ -1,4 +1,5 @@
 #include "attendance.h"
+#include <string.h>
 
 int createStudent(Student *s) {
 	printf("학생이름음? ");
@@ -19,11 +20,13 @@ int createStudent(Student *s) {
 	printf("금요일 오프라인 참여 여부: ");
 	scanf("%d", &s->offline);
 
+	strcpy(s->grade, "  ");
+
 	return 1;
 }
 
 void readStudent(Student *s) {
-	printf("%s\t %d\t %s   %d\t\t%d\t\t%d", s->name, s->studentID, s->department, s->tuesday, s->friday, s->offline);
+        printf("%s\t %d\t %s   %d\t\t%d\t\t%d\t\t%s", s->name, s->studentID, s->department, s->tuesday, s->friday, s->offline, s->grade);
 }
 
 void updateStudent(Student *s) {	
@@ -47,7 +50,6 @@ void updateStudent(Student *s) {
 	
 	printf("==> 업데이트 성공!!!\n");
 }
-
 
 int deleteStudent(Student *s) {
 	strcpy(s->name, "NULL");

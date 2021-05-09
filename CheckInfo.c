@@ -62,6 +62,14 @@ int main() {
 					if(deleteStudent(&slist[no])) count--;
 			}
 		}
+		else if(menu == 6) {
+			int no = selectStudent(slist, index);
+			if(no == -1) {
+				printf("==> 해당 학생 이름 없음!!\n");
+				continue;
+			}
+			giveGrade(&slist[no]);
+		}
 	}
 	return 0;
 }
