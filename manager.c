@@ -1,7 +1,7 @@
 #include "attendance.h"
 
 void listStudent(Student *s, int index) {
-	printf("\n\tì´ë¦„\tí•™ë²ˆ\t\tì†Œì†í•™ë¶€   í™”ìš”ì¼ ì¶œì„  ê¸ˆìš”ì¼ ì¶œì„  ì˜¤í”„ë¼ì¸ ì¶œì„ ì—¬ë¶€\n");
+	printf("\n\t?´ë¦?\t?•™ë²?\t\t?†Œ?†?•™ë¶?   ?™”?š”?¼ ì¶œì„  ê¸ˆìš”?¼ ì¶œì„  ?˜¤?”„?¼?¸ ì¶œì„ ?—¬ë¶?\n");
     printf("===================================================================================\n");
     for(int i = 0; i < index; i++){
         if( s[i].studentID == -1) continue;
@@ -15,11 +15,7 @@ int selectStudent(Student *s, int index) {
 	char name[20];
     int i = 0;
     listStudent(s, index);
-<<<<<<< HEAD
-    printf("ì´ë¦„ì€ (ì·¨ì†Œ:0)?");
-=======
     printf("ÀÌ¸§Àº? ");
->>>>>>> 30ee5d9a3c0ce614f14bc6cbdb4a9ebff7066774
     scanf("%s", name);
     getchar();
     for(i = 0 ; i < index ; i++) {
@@ -33,11 +29,7 @@ int selectStudentID(Student *s, int index) {
 	int no;
     int i = 0;
     listStudent(s, index);
-<<<<<<< HEAD
-    printf("ë²ˆí˜¸ëŠ” (ì·¨ì†Œ:0)?");
-=======
     printf("ÇĞ¹øÀº? ");
->>>>>>> 30ee5d9a3c0ce614f14bc6cbdb4a9ebff7066774
     scanf("%d",&no);
     getchar();
     for(i = 0 ; i < index ; i++) {
@@ -50,7 +42,7 @@ int selectStudentID(Student *s, int index) {
 int selectDataNumber(Student *s, int index) {
 	int no;
     listStudent(s, index);
-    printf("ë²ˆí˜¸ëŠ” (ì·¨ì†Œ:0)?");
+    printf("ë²ˆí˜¸?Š” (ì·¨ì†Œ:0)?");
     scanf("%d",&no);
     getchar();
     return no;
@@ -58,14 +50,14 @@ int selectDataNumber(Student *s, int index) {
 
 int selectMenu() {
 	int menu;
-	printf("\n******ì¶œì„ë¶€ ëª…ë‹¨ ê´€ë¦¬******\n");
+	printf("\n******ì¶œì„ë¶? ëª…ë‹¨ ê´?ë¦?******\n");
 	printf("1. ì¡°íšŒ\n");
-	printf("2. ì¶”ê°€\n");
-	printf("3. ìˆ˜ì •\n");
-	printf("4. ì‚­ì œ\n");
-	printf("5. ì €ì¥\n");
+	printf("2. ì¶”ê??\n");
+	printf("3. ?ˆ˜? •\n");
+	printf("4. ?‚­? œ\n");
+	printf("5. ????¥\n");
 	printf("0. ì¢…ë£Œ\n");
-    printf("=? ì›í•˜ëŠ” ë©”ë‰´ëŠ”?: ");
+    printf("=? ?›?•˜?Š” ë©”ë‰´?Š”?: ");
     scanf("%d", &menu);
 
     return menu;
@@ -81,9 +73,9 @@ void saveData(Student *s, int index) {
 }
 
 void giveGrade(Student *s) {
-    printf("ì„±ì ì„ ì…ë ¥í•˜ì„¸ìš”: ");
+    printf("?„±? ?„ ?…? ¥?•˜?„¸?š”: ");
     scanf("%c", &s->grade);
-    printf("=>ì„±ì  ì…ë ¥ ì™„ë£Œ\n");
+    printf("=>?„±?  ?…? ¥ ?™„ë£?\n");
 }
 
 void searchName(Student *s) {
