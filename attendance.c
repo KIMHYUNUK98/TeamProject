@@ -1,22 +1,22 @@
 #include "attendance.h"
 
 int createStudent(Student *s) {
-	printf("í•™ìƒì´ë¦„ìŒ? ");
+	printf("ÇĞ»ıÀÌ¸§À½? ");
 	scanf("%s", s->name);
 
-	printf("í•™ë²ˆì€? ");
+	printf("ÇĞ¹øÀº? ");
 	scanf("%d", &s->studentID);
 
-	printf("ì†Œì†í•™ë¶€: ");
+	printf("¼Ò¼ÓÇĞºÎ: ");
 	scanf("%s", s->department);
 
-	printf("í™”ìš”ì¼ ì¶œì„ ì—¬ë¶€: ");
+	printf("È­¿äÀÏ Ãâ¼® ¿©ºÎ: ");
 	scanf("%d", &s->tuesday);
 
-	printf("ê¸ˆìš”ì¼ ì¶œì„ ì—¬ë¶€: ");
+	printf("±İ¿äÀÏ Ãâ¼® ¿©ºÎ: ");
 	scanf("%d", &s->friday);
 
-	printf("ê¸ˆìš”ì¼ ì˜¤í”„ë¼ì¸ ì°¸ì—¬ ì—¬ë¶€: ");
+	printf("±İ¿äÀÏ ¿ÀÇÁ¶óÀÎ Âü¿© ¿©ºÎ: ");
 	scanf("%d", &s->offline);
 
 	return 1;
@@ -27,25 +27,25 @@ void readStudent(Student *s) {
 }
 
 void updateStudent(Student *s) {	
-	printf("í•™ìƒì´ë¦„ìŒ? ");
+	printf("ÇĞ»ıÀÌ¸§À½? ");
 	scanf("%s", s->name);
 
-	printf("í•™ë²ˆì€? ");
+	printf("ÇĞ¹øÀº? ");
 	scanf("%d", &s->studentID);
 
-	printf("ì†Œì†í•™ë¶€: ");
+	printf("¼Ò¼ÓÇĞºÎ: ");
 	scanf("%s", s->department);
 
-	printf("í™”ìš”ì¼ ì¶œì„ ì—¬ë¶€: ");
+	printf("È­¿äÀÏ Ãâ¼® ¿©ºÎ: ");
 	scanf("%d", &s->tuesday);
 
-	printf("ê¸ˆìš”ì¼ ì¶œì„ ì—¬ë¶€: ");
+	printf("±İ¿äÀÏ Ãâ¼® ¿©ºÎ: ");
 	scanf("%d", &s->friday);
 
-	printf("ê¸ˆìš”ì¼ ì˜¤í”„ë¼ì¸ ì°¸ì—¬ ì—¬ë¶€: ");
+	printf("±İ¿äÀÏ ¿ÀÇÁ¶óÀÎ Âü¿© ¿©ºÎ: ");
 	scanf("%d", &s->offline);
 	
-	printf("==> ì—…ë°ì´íŠ¸ ì„±ê³µ!!!\n");
+	printf("==> ¾÷µ¥ÀÌÆ® ¼º°ø!!!\n");
 }
 
 
@@ -57,6 +57,6 @@ int deleteStudent(Student *s) {
 	s->friday = -1;
 	s->offline = -1;
 	
-	printf("==> ì‚­ì œë¨!!!\n");
+	printf("==> »èÁ¦µÊ!!!\n");
 	return 1;
 }

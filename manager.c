@@ -1,7 +1,7 @@
 #include "attendance.h"
 
 void listStudent(Student *s, int index) {
-	printf("\n\t?씠由?\t?븰踰?\t\t?냼?냽?븰遺?   ?솕?슂?씪 異쒖꽍  湲덉슂?씪 異쒖꽍  ?삤?봽?씪?씤 異쒖꽍 ?뿬遺?\n");
+	printf("\n\t이름\t학번\t\t소속학부   화요일 출석  금요일 출석  오프라인 출석 여부\n");
     printf("===================================================================================\n");
     for(int i = 0; i < index; i++){
         if( s[i].studentID == -1) continue;
@@ -42,7 +42,7 @@ int selectStudentID(Student *s, int index) {
 int selectDataNumber(Student *s, int index) {
 	int no;
     listStudent(s, index);
-    printf("踰덊샇?뒗 (痍⑥냼:0)?");
+    printf("번호는 (취소:0)?");
     scanf("%d",&no);
     getchar();
     return no;
@@ -50,19 +50,18 @@ int selectDataNumber(Student *s, int index) {
 
 int selectMenu() {
 	int menu;
-	printf("\n******異쒖꽍遺? 紐낅떒 愿?由?******\n");
-	printf("1. 議고쉶\n");
-	printf("2. 異붽??\n");
-	printf("3. ?닔?젙\n");
-	printf("4. ?궘?젣\n");
-	printf("5. ????옣\n");
-	printf("0. 醫낅즺\n");
-    printf("=? ?썝?븯?뒗 硫붾돱?뒗?: ");
+	printf("\n******출석부 명단 관리******\n");
+	printf("1. 조회\n");
+	printf("2. 추가\n");
+	printf("3. 수정\n");
+	printf("4. 삭제\n");
+	printf("5. 저장\n");
+	printf("0. 종료\n");
+    printf("=? 원하는 메뉴는?: ");
     scanf("%d", &menu);
 
     return menu;
 }
-
 
 int loadFile(Student *s) {
 
@@ -73,9 +72,7 @@ void saveData(Student *s, int index) {
 }
 
 void giveGrade(Student *s) {
-    printf("?꽦?쟻?쓣 ?엯?젰?븯?꽭?슂: ");
-    scanf("%c", &s->grade);
-    printf("=>?꽦?쟻 ?엯?젰 ?셿猷?\n");
+
 }
 
 void searchName(Student *s) {
