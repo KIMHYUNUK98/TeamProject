@@ -56,6 +56,7 @@ int selectMenu() {
 	printf("3. 수정\n");
 	printf("4. 삭제\n");
 	printf("5. 저장\n");
+    printf("6. 성적입력\n");
 	printf("0. 종료\n");
     printf("=? 원하는 메뉴는?: ");
     scanf("%d", &menu);
@@ -72,7 +73,9 @@ void saveData(Student *s, int index) {
 }
 
 void giveGrade(Student *s) {
-
+    printf("성적을 입력하세요: ");
+    scanf("%c", &s->grade);
+    printf("=>성적 입력 완료\n");
 }
 
 void searchName(Student *s) {
