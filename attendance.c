@@ -1,53 +1,55 @@
 #include "attendance.h"
+#include <string.h>
 
 int createStudent(Student *s) {
-	printf("ÌïôÏÉùÏù¥Î¶ÑÏùå? ");
+	printf("«–ª˝¿Ã∏ß¿Ω? ");
 	scanf("%s", s->name);
 
-	printf("ÌïôÎ≤àÏùÄ? ");
+	printf("«–π¯¿∫? ");
 	scanf("%d", &s->studentID);
 
-	printf("ÏÜåÏÜçÌïôÎ∂Ä: ");
+	printf("º“º”«–∫Œ: ");
 	scanf("%s", s->department);
 
-	printf("ÌôîÏöîÏùº Ï∂úÏÑù Ïó¨Î∂Ä: ");
+	printf("»≠ø‰¿œ √‚ºÆ ø©∫Œ: ");
 	scanf("%d", &s->tuesday);
 
-	printf("Í∏àÏöîÏùº Ï∂úÏÑù Ïó¨Î∂Ä: ");
+	printf("±›ø‰¿œ √‚ºÆ ø©∫Œ: ");
 	scanf("%d", &s->friday);
 
-	printf("Í∏àÏöîÏùº Ïò§ÌîÑÎùºÏù∏ Ï∞∏Ïó¨ Ïó¨Î∂Ä: ");
+	printf("±›ø‰¿œ ø¿«¡∂Û¿Œ ¬¸ø© ø©∫Œ: ");
 	scanf("%d", &s->offline);
+
+	strcpy(s->grade, "  ");
 
 	return 1;
 }
 
 void readStudent(Student *s) {
-	printf("%s\t %d\t %s   %d\t\t%d\t\t%d", s->name, s->studentID, s->department, s->tuesday, s->friday, s->offline);
+        printf("%s\t %d\t %s   %d\t\t%d\t\t%d\t\t%s", s->name, s->studentID, s->department, s->tuesday, s->friday, s->offline, s->grade);
 }
 
 void updateStudent(Student *s) {	
-	printf("ÌïôÏÉùÏù¥Î¶ÑÏùå? ");
+	printf("«–ª˝¿Ã∏ß¿Ω? ");
 	scanf("%s", s->name);
 
-	printf("ÌïôÎ≤àÏùÄ? ");
+	printf("«–π¯¿∫? ");
 	scanf("%d", &s->studentID);
 
-	printf("ÏÜåÏÜçÌïôÎ∂Ä: ");
+	printf("º“º”«–∫Œ: ");
 	scanf("%s", s->department);
 
-	printf("ÌôîÏöîÏùº Ï∂úÏÑù Ïó¨Î∂Ä: ");
+	printf("»≠ø‰¿œ √‚ºÆ ø©∫Œ: ");
 	scanf("%d", &s->tuesday);
 
-	printf("Í∏àÏöîÏùº Ï∂úÏÑù Ïó¨Î∂Ä: ");
+	printf("±›ø‰¿œ √‚ºÆ ø©∫Œ: ");
 	scanf("%d", &s->friday);
 
-	printf("Í∏àÏöîÏùº Ïò§ÌîÑÎùºÏù∏ Ï∞∏Ïó¨ Ïó¨Î∂Ä: ");
+	printf("±›ø‰¿œ ø¿«¡∂Û¿Œ ¬¸ø© ø©∫Œ: ");
 	scanf("%d", &s->offline);
 	
-	printf("==> ÏóÖÎç∞Ïù¥Ìä∏ ÏÑ±Í≥µ!!!\n");
+	printf("==> æ˜µ•¿Ã∆Æ º∫∞¯!!!\n");
 }
-
 
 int deleteStudent(Student *s) {
 	strcpy(s->name, "NULL");
@@ -57,6 +59,6 @@ int deleteStudent(Student *s) {
 	s->friday = -1;
 	s->offline = -1;
 	
-	printf("==> ÏÇ≠Ï†úÎê®!!!\n");
+	printf("==> ªË¡¶µ !!!\n");
 	return 1;
 }
