@@ -26,11 +26,11 @@ int main() {
 		}
 		else if(menu == 3) {
 			int no = selectStudent(slist, index);
-			if(no == 0) {
-				printf("취소됨!!!\n");
+			if(no == -1) {
+				printf("==> 해당 학생 이름 없음!!\n");
 				continue;
 			}
-			updateStudent(&slist[no-1]);
+			updateStudent(&slist[no]);
 		}
 		else if(menu == 4) {
 			int delok, no;
@@ -42,18 +42,24 @@ int main() {
 			}
 			else if(delok == 1) {
 				no = selectDataNumber(slist, index);
-				if(deleteStudent(&slist[no-1])) count--;
-				printf("==> 삭제됨!!!\n");
+				if(no == 0)
+					printf("=> 삭제 취소됨!!\n");
+				else
+					if(deleteStudent(&slist[no-1])) count--;
 			}
 			else if(delok == 2) {
 				no = selectStudent(slist, index);
-				if(deleteStudent(&slist[no-1])) count--;
-				printf("==> 삭제됨!!!\n");
+				if(no == -1)
+					printf("=> 일치하는 학생 이름이 없음!!\n");
+				else
+					if(deleteStudent(&slist[no])) count--;
 			}
 			else {
 				no = selectStudentID(slist, index);
-				if(deleteStudent(&slist[no-1])) count--;
-				printf("==> 삭제됨!!!\n");
+				if(no == -1)
+					printf("=> 일치하는 학생 학번이 없음!!\n");
+				else
+					if(deleteStudent(&slist[no])) count--;
 			}
 		}
 	}

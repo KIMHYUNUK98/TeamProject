@@ -7,26 +7,36 @@ void listStudent(Student *s, int index) {
         if( s[i].studentID == -1) continue;
 		printf("%d\t", i+1);
         readStudent(&s[i]);
+        printf("\n");
     }
-    printf("\n");
 }
 
-char selectStudent(Student *s, int index) {
+int selectStudent(Student *s, int index) {
 	char name[20];
+    int i = 0;
     listStudent(s, index);
-    printf("이름은 (취소:0)?");
+    printf("이름은? ");
     scanf("%s", name);
     getchar();
-    return *name;
+    for(i = 0 ; i < index ; i++) {
+        if(strcmp(name,s[i].name) == 0)
+            return i;
+    }
+    return -1;
 }
 
 int selectStudentID(Student *s, int index) {
 	int no;
+    int i = 0;
     listStudent(s, index);
-    printf("번호는 (취소:0)?");
+    printf("학번은? ");
     scanf("%d",&no);
     getchar();
-    return no;
+    for(i = 0 ; i < index ; i++) {
+        if(s[i].studentID == no)
+            return i;
+    }
+    return -1;
 }
 
 int selectDataNumber(Student *s, int index) {
