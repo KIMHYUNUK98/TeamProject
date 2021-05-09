@@ -8,7 +8,7 @@ typedef struct{
     int tuesday; //화요일 출석 여부 0: 결석 1: 출석
     int friday; //금요일 출석 여부 0: 결석 1: 출석
     int offline; //금요일 오프라인 창여 여부 불참: 0 참석: 1
-    char grade; //성적
+    char grade[3]; //성적
 } Student;
 
 int createStudent(Student *s); //C
