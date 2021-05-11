@@ -57,6 +57,8 @@ int selectMenu() {
 	printf("4. 삭제\n");
 	printf("5. 저장\n");
     printf("6. 성적입력\n");
+    printf("7. 이름 검색\n");
+    printf("8. 학번 검색\n");
 	printf("0. 종료\n");
     printf("=? 원하는 메뉴는?: ");
     scanf("%d", &menu);
@@ -65,7 +67,26 @@ int selectMenu() {
 }
 
 int loadFile(Student *s) {
+    FILE *fp;
+    fp = fopen("student.txt", "rt");
 
+    int i = 0;
+    if(fp != NULL){
+        for(; i < 100; i++){
+            fscanf(fp, "%s", s[i].name);
+            fscanf(fp, "%d", &s[i].studentID);
+            fscanf(fp, "%s", s[i].department);
+            fscanf(fp, "%d", &s[i].tuesday);
+            fscanf(fp, "%d", &s[i].friday);
+            fscanf(fp, "%d", &s[i].offline);
+            fscanf(fp, "%s", s[i].grade);
+            if(feof(fp)) break;
+        }
+        printf("=> 로딩 성공!\n");
+    }
+    else printf("=> 파일 없음!\n");
+    fclose(fp);
+    return i;
 }
 
 void saveData(Student *s, int index) {

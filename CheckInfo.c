@@ -70,6 +70,12 @@ int main() {
 			}
 			giveGrade(&slist[no]);
 		}
+		else if(menu == 7) {
+			
+		}
+		else if(menu == 8) {
+			
+		}
 	}
 	return 0;
 }
