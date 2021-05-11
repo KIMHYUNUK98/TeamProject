@@ -57,6 +57,8 @@ int selectMenu() {
 	printf("4. 삭제\n");
 	printf("5. 저장\n");
     printf("6. 성적입력\n");
+    printf("7. 이름 검색\n");
+    printf("8. 학번 검색\n");
 	printf("0. 종료\n");
     printf("=? 원하는 메뉴는?: ");
     scanf("%d", &menu);
