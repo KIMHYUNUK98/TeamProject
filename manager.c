@@ -1,7 +1,7 @@
 #include "attendance.h"
 
 void listStudent(Student *s, int index) {
-        printf("\n\t이름\t학번\t\t소속학부   화요일 출석  금요일 출석  오프라인 출석 여부  성적\n");
+    printf("\n\t이름\t학번\t\t소속학부   화요일 출석  금요일 출석  오프라인 출석 여부  성적\n");
     printf("==============================================================================================\n");
     for(int i = 0; i < index; i++){
         if( s[i].studentID == -1) continue;
@@ -95,7 +95,7 @@ void saveData(Student *s, int index) {
 
     for(int i = 0 ; i < index ; i++) {
         if(s[i].studentID == -1) continue;
-        fprintf(fp, "%s %d %s %d %d %d %s", s[i].name, s[i].studentID, s[i].department, s[i].tuesday, s[i].friday, s[i].offline, s[i].grade);
+        fprintf(fp, "%s %d %s %d %d %d %s\n", s[i].name, s[i].studentID, s[i].department, s[i].tuesday, s[i].friday, s[i].offline, s[i].grade);
     }
     fclose(fp);
     printf("==> 저장됨!!!\n");
@@ -107,11 +107,42 @@ void giveGrade(Student *s) {
     printf("=>성적 입력 완료\n");
 }
 
-void searchName(Student *s) {
+void searchName(Student *s, int index) {
+    char name[20];
+    int i = 0;
+    int count = 0;
+    printf("검색할 이름은? ");
+    scanf("%s", name);
+    getchar();
 
+    printf("\n\t이름\t학번\t\t소속학부   화요일 출석  금요일 출석  오프라인 출석 여부  성적\n");
+    printf("==============================================================================================\n");   
+    for(i = 0 ; i < index ; i++) {
+        if(strstr(s[i].name, name)){
+            printf("%d\t", i+1);
+            readStudent(&s[i]);
+            count++;
+        }
+    }
+    if(count == 0) printf("=> 검색한 이름 없음\n");
 }
 
-void searchID(Student *s) {
+void searchID(Student *s, int index) {
+    int num;
+    int i = 0;
+    int count = 0;
+    printf("검색할 학번은? ");
+    scanf("%d", &num);
 
+    printf("\n\t이름\t학번\t\t소속학부   화요일 출석  금요일 출석  오프라인 출석 여부  성적\n");
+    printf("==============================================================================================\n");   
+    for(i = 0 ; i < index ; i++) {
+        if(s[i].studentID == num)){
+            printf("%d\t", i+1);
+            readStudent(&s[i]);
+            count++;
+        }
+    }
+    if(count == 0) printf("=> 검색한 학번 없음\n");
 }
 
