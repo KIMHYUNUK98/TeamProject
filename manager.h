@@ -8,5 +8,5 @@ int selectMenu();
 int loadFile(Student *s); 
 void saveData(Student *s, int index); 
 void giveGrade(Student *s);
-void searchName(Student *s);
-void searchID(Student *s);
+void searchName(Student *s, int index);
+void searchID(Student *s, int index);
