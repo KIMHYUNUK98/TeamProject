@@ -1,7 +1,7 @@
 #include "attendance.h"
 
 void listStudent(Student *s, int index) {
-        printf("\n\tì´ë¦„\tí•™ë²ˆ\t\tì†Œì†í•™ë¶€   í™”ìš”ì¼ ì¶œì„  ê¸ˆìš”ì¼ ì¶œì„  ì˜¤í”„ë¼ì¸ ì¶œì„ ì—¬ë¶€  ì„±ì \n");
+        printf("\n\tÀÌ¸§\tÇĞ¹ø\t\t¼Ò¼ÓÇĞºÎ   È­¿äÀÏ Ãâ¼®  ±İ¿äÀÏ Ãâ¼®  ¿ÀÇÁ¶óÀÎ Ãâ¼® ¿©ºÎ  ¼ºÀû\n");
     printf("==============================================================================================\n");
     for(int i = 0; i < index; i++){
         if( s[i].studentID == -1) continue;
@@ -15,7 +15,7 @@ int selectStudent(Student *s, int index) {
 	char name[20];
     int i = 0;
     listStudent(s, index);
-    printf("ì´ë¦„ì€? ");
+    printf("ÀÌ¸§Àº? ");
     scanf("%s", name);
     getchar();
     for(i = 0 ; i < index ; i++) {
@@ -29,7 +29,7 @@ int selectStudentID(Student *s, int index) {
 	int no;
     int i = 0;
     listStudent(s, index);
-    printf("í•™ë²ˆì€? ");
+    printf("ÇĞ¹øÀº? ");
     scanf("%d",&no);
     getchar();
     for(i = 0 ; i < index ; i++) {
@@ -42,7 +42,7 @@ int selectStudentID(Student *s, int index) {
 int selectDataNumber(Student *s, int index) {
 	int no;
     listStudent(s, index);
-    printf("ë²ˆí˜¸ëŠ” (ì·¨ì†Œ:0)?");
+    printf("¹øÈ£´Â (Ãë¼Ò:0)?");
     scanf("%d",&no);
     getchar();
     return no;
@@ -50,17 +50,17 @@ int selectDataNumber(Student *s, int index) {
 
 int selectMenu() {
     int menu;
-    printf("\n******ì¶œì„ë¶€ ëª…ë‹¨ ê´€ë¦¬******\n");
-    printf("1. ì¡°íšŒ\n");
-    printf("2. ì¶”ê°€\n");
-    printf("3. ìˆ˜ì •\n");
-    printf("4. ì‚­ì œ\n");
-    printf("5. ì €ì¥\n");
-    printf("6. ì„±ì ì…ë ¥\n");
-    printf("7. ì´ë¦„ ê²€ìƒ‰\n");
-    printf("8. í•™ë²ˆ ê²€ìƒ‰\n");
-    printf("0. ì¢…ë£Œ\n");
-    printf("=? ì›í•˜ëŠ” ë©”ë‰´ëŠ”?: ");
+    printf("\n******Ãâ¼®ºÎ ¸í´Ü °ü¸®******\n");
+    printf("1. Á¶È¸\n");
+    printf("2. Ãß°¡\n");
+    printf("3. ¼öÁ¤\n");
+    printf("4. »èÁ¦\n");
+    printf("5. ÀúÀå\n");
+    printf("6. ¼ºÀûÀÔ·Â\n");
+    printf("7. ÀÌ¸§ °Ë»ö\n");
+    printf("8. ÇĞ¹ø °Ë»ö\n");
+    printf("0. Á¾·á\n");
+    printf("=? ¿øÇÏ´Â ¸Ş´º´Â?: ");
     scanf("%d", &menu);
 
     return menu;
@@ -72,7 +72,7 @@ int loadFile(Student *s) {
 
     int i = 0;
     if(fp != NULL){
-        for(; i < 100; i++){
+        for( i = 0 ; i < 100; i++){
             fscanf(fp, "%s", s[i].name);
             fscanf(fp, "%d", &s[i].studentID);
             fscanf(fp, "%s", s[i].department);
@@ -82,21 +82,29 @@ int loadFile(Student *s) {
             fscanf(fp, "%s", s[i].grade);
             if(feof(fp)) break;
         }
-        printf("=> ë¡œë”© ì„±ê³µ!\n");
     }
-    else printf("=> íŒŒì¼ ì—†ìŒ!\n");
+    else printf("=> ÆÄÀÏ ¾øÀ½!\n");
     fclose(fp);
     return i;
 }
 
 void saveData(Student *s, int index) {
 
+    FILE *fp;
+    fp = fopen("student.txt", "wt");
+
+    for(int i = 0 ; i < index ; i++) {
+        if(s[i].studentID == -1) continue;
+        fprintf(fp, "%s %d %s %d %d %d %s", s[i].name, s[i].studentID, s[i].department, s[i].tuesday, s[i].friday, s[i].offline, s[i].grade);
+    }
+    fclose(fp);
+    printf("==> ÀúÀåµÊ!!!\n");
 }
 
 void giveGrade(Student *s) {
-    printf("ì„±ì ì„ ì…ë ¥í•˜ì„¸ìš”: ");
+    printf("¼ºÀûÀ» ÀÔ·ÂÇÏ¼¼¿ä: ");
     scanf("%s", s->grade);
-    printf("=>ì„±ì  ì…ë ¥ ì™„ë£Œ\n");
+    printf("=>¼ºÀû ÀÔ·Â ¿Ï·á\n");
 }
 
 void searchName(Student *s) {
