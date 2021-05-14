@@ -5,17 +5,9 @@
 int main() {
 
 	Student slist[100];
-	int count = 0;
-	int index = 0, menu;
-
 	int curcount = 0;
-	count = loadFile(slist);
-	printf("count = %d", count);
-	index = count;
-	if(count == 0) 
-		printf("==> 파일 없음!!!\n");
-	else
-		printf("==> 로딩 성공!!!\n");
+	int index = loadFile(slist);
+	int count = index, menu;
 
 	while(1) {
 		menu = selectMenu();
@@ -70,6 +62,10 @@ int main() {
 					if(deleteStudent(&slist[no])) count--;
 			}
 		}
+		else if(menu == 5) {
+			//저장
+			saveData(slist, index);
+		}
 		else if(menu == 6) {
 			int no = selectStudent(slist, index);
 			if(no == -1) {
@@ -78,11 +74,13 @@ int main() {
 			}
 			giveGrade(&slist[no]);
 		}
-		else if(menu == 7) {
-			saveData(slist, index);
+		else if(menu == 7) {	
+			//이름검색
+			searchName(slist, index);
 		}
 		else if(menu == 8) {
-			
+			//학번검색
+			searchID(slist, index);
 		}
 	}
 	return 0;
