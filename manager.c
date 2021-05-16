@@ -85,7 +85,7 @@ int loadFile(Student *s) {
     }
     else printf("=> 파일 없음!\n");
     fclose(fp);
-    return i;
+    return i+1;
 }
 
 void saveData(Student *s, int index) {
@@ -124,6 +124,7 @@ void searchName(Student *s, int index) {
             count++;
         }
     }
+    printf("\n");
     if(count == 0) printf("=> 검색한 이름 없음\n");
 }
 
@@ -137,12 +138,13 @@ void searchID(Student *s, int index) {
     printf("\n\t이름\t학번\t\t소속학부   화요일 출석  금요일 출석  오프라인 출석 여부  성적\n");
     printf("==============================================================================================\n");   
     for(i = 0 ; i < index ; i++) {
-        if(s[i].studentID == num)){
+        if(s[i].studentID == num){
             printf("%d\t", i+1);
             readStudent(&s[i]);
             count++;
         }
     }
+    printf("\n");
     if(count == 0) printf("=> 검색한 학번 없음\n");
 }
 
